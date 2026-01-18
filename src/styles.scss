@@ -1,1 +1,274 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: 'BricolageGrotesque';
+    src: url('../public/fonts/BricolageGrotesque.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Junicode';
+    src: url('../public/fonts/Junicode-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Junicode';
+    src: url('../public/fonts/Junicode-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Junicode-Cond';
+    src: url('../public/fonts/Junicode-Cond.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Junicode-Cond';
+    src: url('../public/fonts/Junicode-CondItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Junicode-CondLight';
+    src: url('../public/fonts/Junicode-CondLight.ttf') format('truetype');
+    font-weight: light;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Junicode-CondLight';
+    src: url('../public/fonts/Junicode-CondLightItalic.ttf') format('truetype');
+    font-weight: light;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Junicode-CondMedium';
+    src: url('../public/fonts/Junicode-CondMedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Junicode-CondMedium';
+    src: url('../public/fonts/Junicode-CondMediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Junicode-Exp';
+    src: url('../public/fonts/Junicode-Exp.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Junicode-Exp';
+    src: url('../public/fonts/Junicode-ExpBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Junicode-Exp';
+    src: url('../public/fonts/Junicode-ExpBoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Junicode-Exp';
+    src: url('../public/fonts/Junicode-ExpItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Junicode-ExpMedium';
+    src: url('../public/fonts/Junicode-ExpMedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Junicode-ExpMedium';
+    src: url('../public/fonts/Junicode-ExpMediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Junicode-ExpSmBold';
+    src: url('../public/fonts/Junicode-ExpSmBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Junicode-ExpSmBold';
+    src: url('../public/fonts/Junicode-ExpSmBoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Junicode';
+    src: url('../public/fonts/Junicode-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Junicode';
+    src: url('../public/fonts/Junicode-Light.ttf') format('truetype');
+    font-weight: light;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Junicode';
+    src: url('../public/fonts/Junicode-LightItalic.ttf') format('truetype');
+    font-weight: light;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Junicode';
+    src: url('../public/fonts/Junicode-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Junicode';
+    src: url('../public/fonts/Junicode-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Junicode';
+    src: url('../public/fonts/Junicode-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Junicode-SmBold';
+    src: url('../public/fonts/Junicode-SmBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Junicode-SmBold';
+    src: url('../public/fonts/Junicode-SmBoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Junicode-SmCond';
+    src: url('../public/fonts/Junicode-SmCond.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Junicode-SmCond';
+    src: url('../public/fonts/Junicode-SmCondItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Junicode-SmCondLight';
+    src: url('../public/fonts/Junicode-SmCondLight.ttf') format('truetype');
+    font-weight: light;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Junicode-SmCondLight';
+    src: url('../public/fonts/Junicode-SmCondLightItalic.ttf') format('truetype');
+    font-weight: light;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Junicode-SmCondMedium';
+    src: url('../public/fonts/Junicode-SmCondMedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Junicode-SmCondMedium';
+    src: url('../public/fonts/Junicode-SmCondMediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Junicode-SmExp';
+    src: url('../public/fonts/Junicode-SmExp.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Junicode-SmExp';
+    src: url('../public/fonts/Junicode-SmExpBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Junicode-SmExp';
+    src: url('../public/fonts/Junicode-SmExpBoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Junicode-SmExp';
+    src: url('../public/fonts/Junicode-SmExpItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Junicode-SmExpMedium';
+    src: url('../public/fonts/Junicode-SmExpMedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Junicode-SmExpMedium';
+    src: url('../public/fonts/Junicode-SmExpMediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Junicode-SmExpSmBold';
+    src: url('../public/fonts/Junicode-SmExpSmBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Junicode-SmExpSmBold';
+    src: url('../public/fonts/Junicode-SmExpSmBoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
