@@ -3,10 +3,21 @@
     margin: 0;
     padding: 0;
     font-family: 'BricolageGrotesque', sans-serif;
+    color: var(--white);
+    background-color: var(--black)
 }
 
 p {
     line-height: 1.6;
+}
+
+button {
+    cursor: pointer;
+}
+
+:root {
+    --black: #0A0A0C;
+    --white: #FAF5F1;
 }
 
 @font-face {

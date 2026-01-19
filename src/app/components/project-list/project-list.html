@@ -1,0 +1,12 @@
+<ul class="list-container">
+  @for (item of items(); track item.title) {
+    <li class="list-item">
+      <span class="project-title">{{ item.title }}</span>
+      
+      <button class="action-btn" (click)="handleAction(item)">
+          Leia mais
+        </button>
+    </li>
+    <hr/>
+  }
+</ul>
