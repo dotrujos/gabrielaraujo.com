@@ -1,10 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'BricolageGrotesque', sans-serif;
+}
+
+p {
+    line-height: 1.6;
+}
 
 @font-face {
     font-family: 'BricolageGrotesque';
     src: url('/fonts/BricolageGrotesque.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
 }
 
 @font-face {

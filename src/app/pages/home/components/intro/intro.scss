@@ -1,0 +1,19 @@
+.intro-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 70px;
+    h1 {
+        font-size: 8vw;
+        line-height: 0.6;
+    }
+    .intro-summary  {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: -webkit-fill-available;
+        button {
+            width: 30%;
+        }
+    }
+}
