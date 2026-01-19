@@ -10,7 +10,8 @@
     .intro-summary  {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: end;
+        gap: 15px;
         height: -webkit-fill-available;
         button {
             width: 30%;
