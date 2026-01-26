@@ -1,3 +1,6 @@
-body {
-    font-family: 'BricolageGrotesque', sans-serif;
+:host {
+    .reduced-opacity {
+        opacity: 0.5;
+        pointer-events: none;
+    }
 }

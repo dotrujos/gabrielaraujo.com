@@ -1,3 +1,10 @@
-<app-layout>
+<app-layout [class.reduced-opacity]="isToShowContactPopup()">
     <router-outlet></router-outlet>
 </app-layout>
+@if (isToShowContactPopup()) {
+    <app-contact-popup (closed)="closeContactPopup()">
+        <p>Email: <a href="mailto:gabriel.araujo2902@outlook.com.br" target="_blank" rel="noopener noreferrer">gabriel.araujo2902@outlook.com.br</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/garaújo" target="_blank" rel="noopener noreferrer">in/garaújo</a></p>
+        <p>WhatsApp: <a href="https://wa.me/5511992046942" target="_blank" rel="noopener noreferrer">+55 (11) 99204-6942</a></p>
+    </app-contact-popup>
+}
