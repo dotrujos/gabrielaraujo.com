@@ -16,10 +16,6 @@ export class App {
   protected readonly title = signal('personal-portfolio');
   protected readonly isToShowContactPopup = this.popupStore.isToShowContactPopup();
 
-  constructor() {
-    this.popupStore.openContactPopup()
-  }
-
   protected closeContactPopup() {
     this.popupStore.closeContactPopup();
   }

@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SerifFont } from '../../../../directives/serif-font';
 import { StyledButton } from "../../../../directives/styled-button";
+import { PopupStore } from '../../../../store/popup-store';
 
 @Component({
   selector: 'app-intro',
@@ -9,5 +10,9 @@ import { StyledButton } from "../../../../directives/styled-button";
   styleUrl: './intro.scss',
 })
 export class Intro {
-
+  private readonly popupStore = inject(PopupStore)
+  
+  protected openContactPopup() {
+    this.popupStore.openContactPopup();
+  }
 }

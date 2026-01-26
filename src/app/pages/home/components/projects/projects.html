@@ -1,6 +1,6 @@
 <div class="projects-summary">
     <p>Onde a técnica encontra a arte, Gabriel ergue aplicações de alta performance, transformando conceitos avançados em soluções que perduram e fortalecem marcas.</p>
-    <button styledButton>Vamos conversar</button>
+    <button styledButton (click)="openContactPopup()">Vamos conversar</button>
 </div>
 <div class="projects">
     <app-project-list [items]="this.projects"></app-project-list>
