@@ -2,7 +2,19 @@
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    container-type: inline-size;
+    width: 100%;
+
     img {
         width: 22vw;
+        flex: 1;      
+        min-width: 0; 
+        object-fit: cover; 
+    }
+}
+
+@container (max-width: 400px) {
+    img:last-child {
+        display: none;
     }
 }

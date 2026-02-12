@@ -23,6 +23,14 @@
     gap: 10px;
     align-items: center;
     i {
-        font-size: 50px;
+        font-size: clamp(24px, 5vw, 50px);;
     }
+}
+
+@media only screen and (max-width: 1024px) {
+  .intro-container {
+    flex-direction: column;
+    align-items: baseline;
+    gap: 20px;
+  }
 }

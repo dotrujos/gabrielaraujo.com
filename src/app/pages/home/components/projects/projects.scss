@@ -17,3 +17,12 @@
         }
     }
 }
+
+@media only screen and (max-width: 1024px) {
+  :host {
+    flex-direction: column;
+    .projects-summary > button {
+        margin-top: 20px;
+    }
+  }
+}
