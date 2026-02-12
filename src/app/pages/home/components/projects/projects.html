@@ -3,7 +3,7 @@
     <button styledButton (click)="openContactPopup()">Vamos conversar</button>
 </div>
 <div class="projects">
-    <app-project-list [items]="this.projects"></app-project-list>
+    <app-project-list [items]="this.projects" (itemClicked)="handleProjectClick($event)"></app-project-list>
     <br/>
     <img src="/images/space.png" />
 </div>

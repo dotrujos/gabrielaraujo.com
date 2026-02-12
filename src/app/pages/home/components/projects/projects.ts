@@ -14,12 +14,16 @@ export class Projects {
   private readonly popupStore = inject(PopupStore)
 
   protected readonly projects: ProjectItem[] = [
-    { title: 'PROJETOS PESSOAIS' },
-    { title: 'CONTRIBUIÇÕES' },
-    { title: 'HACKATONS' },
+    { title: 'PROJETOS PESSOAIS', link: 'https://github.com/dotrujos?tab=repositories' },
+    { title: 'CONTRIBUIÇÕES', link: '/contributions' },
+    { title: 'HACKATONS', link: '/hackaton' },
   ];
 
   protected openContactPopup() {
     this.popupStore.openContactPopup();
+  }
+
+  protected handleProjectClick(project: ProjectItem) {
+    window.open(project.link, '_blank')
   }
 }
