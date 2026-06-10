@@ -2,6 +2,9 @@
 * {
     margin: 0;
     padding: 0;
+}
+
+body {
     font-family: 'BricolageGrotesque', sans-serif;
     color: var(--white);
     background-color: var(--black)
@@ -12,6 +15,8 @@ p {
 }
 
 button {
+    font-family: 'BricolageGrotesque', sans-serif;
+    color: var(--white);
     cursor: pointer;
 }
 
