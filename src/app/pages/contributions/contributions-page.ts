@@ -13,7 +13,15 @@ import { isExternalLink } from '../../utils/link';
 })
 export class ContributionsPage {
   // preencher no formato: { project, kind, summary, year?, link? }
-  protected readonly contributions: ContributionEntry[] = [];
+  protected readonly contributions: ContributionEntry[] = [
+    {
+      project: 'CleanArch Enablers',
+      kind: 'SDK',
+      summary: 'SDK para reduzir atrito de desenvolvimento de aplicações com Clean Architecture.',
+      year: '2025, 2026',
+      link: 'https://github.com/clean-arch-enablers-project'
+    }
+  ];
 
   protected isExternal(contribution: ContributionEntry): boolean {
     return isExternalLink(contribution.link);

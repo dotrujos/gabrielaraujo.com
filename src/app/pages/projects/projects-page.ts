@@ -12,9 +12,18 @@ import { PageEntry } from '../../models/page-entry';
 export class ProjectsPage {
   protected readonly entries: PageEntry[] = [
     {
-      title: 'Projetos pessoais',
-      description: 'Repositórios públicos no GitHub.',
-      link: 'https://github.com/dotrujos?tab=repositories',
+      title: 'Motivie',
+      description: 'Acervo de Estampas.',
+      link: 'https://motivie.com',
+      year: '2026',
+      tags: ['Go', 'Google Cloud']
+    },
+    {
+      title: 'Velo',
+      description: 'Rede social, Mapas e Eventos para ciclistas.',
+      link: 'https://github.com/velo-project',
+      year: '2025',
+      tags: ['Swift', 'iOS', 'Java', 'Go', 'Google Cloud'],
     },
   ];
 }

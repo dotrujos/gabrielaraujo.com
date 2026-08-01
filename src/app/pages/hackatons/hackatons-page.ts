@@ -13,7 +13,13 @@ import { isExternalLink } from '../../utils/link';
 })
 export class HackatonsPage {
   // preencher no formato: { event, year, role?, result?, summary?, stack?, link? }
-  protected readonly hackatons: HackatonEntry[] = [];
+  protected readonly hackatons: HackatonEntry[] = [
+    {
+      event: 'Maratona de Programação Layers 0b11',
+      year: '2025',
+      result: '2º lugar',
+    }
+  ];
 
   protected isExternal(hackaton: HackatonEntry): boolean {
     return isExternalLink(hackaton.link);
