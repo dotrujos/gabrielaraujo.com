@@ -2,12 +2,22 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
     font-family: 'BricolageGrotesque', sans-serif;
     color: var(--white);
-    background-color: var(--black)
+    background-color: var(--black);
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
 }
 
 p {
@@ -18,6 +28,7 @@ button {
     font-family: 'BricolageGrotesque', sans-serif;
     color: var(--white);
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 :root {
@@ -25,6 +36,12 @@ button {
     --white: #FAF5F1;
     --gray: #414143;
     --light-gray: #A8A8A8;
+
+    /* tipografia editorial: mesma escala em mobile e desktop */
+    --label-size: 0.75rem;
+    --label-tracking: 0.12em;
+    --title-tracking: 0.05em;
+    --brand-tracking: 0.08em;
 }
 
 @font-face {

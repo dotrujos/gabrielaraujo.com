@@ -1,0 +1,52 @@
+<header class="site-header">
+    <div class="bar">
+        <a class="brand" routerLink="/" (click)="closeMenu()">
+            GABRIEL <span serifFont><i>araújo</i></span>
+        </a>
+
+        <nav class="nav-desktop">
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                <span class="index">01</span>INÍCIO
+            </a>
+            <a routerLink="/projects" routerLinkActive="active">
+                <span class="index">02</span>PROJETOS
+            </a>
+            <a routerLink="/contributions" routerLinkActive="active">
+                <span class="index">03</span>CONTRIBUIÇÕES
+            </a>
+            <a routerLink="/hackaton" routerLinkActive="active">
+                <span class="index">04</span>HACKATONS
+            </a>
+        </nav>
+
+        <button
+            class="menu-toggle"
+            type="button"
+            [attr.aria-expanded]="isMenuOpen()"
+            aria-controls="nav-mobile"
+            (click)="toggleMenu()">
+            {{ isMenuOpen() ? 'FECHAR' : 'MENU' }}
+        </button>
+    </div>
+
+    @if (isMenuOpen()) {
+        <nav
+            class="nav-mobile"
+            id="nav-mobile"
+            animate.enter="menu-enter"
+            animate.leave="menu-leave">
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">
+                <span class="index">01</span>INÍCIO
+            </a>
+            <a routerLink="/projects" routerLinkActive="active" (click)="closeMenu()">
+                <span class="index">02</span>PROJETOS
+            </a>
+            <a routerLink="/contributions" routerLinkActive="active" (click)="closeMenu()">
+                <span class="index">03</span>CONTRIBUIÇÕES
+            </a>
+            <a routerLink="/hackaton" routerLinkActive="active" (click)="closeMenu()">
+                <span class="index">04</span>HACKATONS
+            </a>
+        </nav>
+    }
+</header>

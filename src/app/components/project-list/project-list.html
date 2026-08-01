@@ -2,10 +2,14 @@
   @for (item of items(); track item.title) {
     <li class="list-item">
       <span class="project-title">{{ item.title }}</span>
-      
-      <button class="action-btn" (click)="handleAction(item)">
-          Leia mais
-        </button>
+
+      @if (isExternal(item)) {
+        <a class="action-btn" [href]="item.link" target="_blank" rel="noopener noreferrer">
+          Leia mais <span aria-hidden="true">&#8599;</span>
+        </a>
+      } @else {
+        <a class="action-btn" [routerLink]="item.link">Leia mais</a>
+      }
     </li>
     <hr/>
   }

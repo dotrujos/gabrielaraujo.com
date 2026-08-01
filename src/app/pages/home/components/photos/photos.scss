@@ -2,19 +2,30 @@
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    container-type: inline-size;
     width: 100%;
 
     img {
         width: 22vw;
-        flex: 1;      
-        min-width: 0; 
-        object-fit: cover; 
+        flex: 1;
+        min-width: 0;
+        object-fit: cover;
+        aspect-ratio: 1 / 1;
     }
 }
 
-@container (max-width: 400px) {
-    img:last-child {
-        display: none;
+@media only screen and (max-width: 640px) {
+    :host {
+        justify-content: flex-start;
+
+        /* retrato único, ancorado à esquerda */
+        img {
+            display: none;
+        }
+
+        img:nth-child(2) {
+            display: block;
+            width: 62%;
+            flex: 0 0 auto;
+        }
     }
 }

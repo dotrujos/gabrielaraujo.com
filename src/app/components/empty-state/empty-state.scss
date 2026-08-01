@@ -1,0 +1,38 @@
+.empty {
+    border-top: 3px solid var(--white);
+    padding: 48px 0;
+
+    .empty-title {
+        font-size: clamp(2rem, 6vw, 3.5rem);
+        line-height: 0.9;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+    }
+
+    .empty-note {
+        padding-top: 16px;
+        max-width: 46ch;
+        color: var(--light-gray);
+    }
+}
+
+.empty-enter {
+    animation: empty-rise 0.5s cubic-bezier(0.2, 0.7, 0.3, 1) 0.18s both;
+}
+
+@keyframes empty-rise {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .empty-enter {
+        animation: none;
+    }
+}

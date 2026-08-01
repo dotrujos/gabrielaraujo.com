@@ -1,0 +1,53 @@
+<app-page-shell
+    index="04"
+    title="Hackatons"
+    deck="Maratonas, protótipos e o que nasce sob pressão de prazo.">
+    @if (hackatons.length) {
+        <ol class="timeline">
+            @for (hackaton of hackatons; track hackaton.event; let i = $index) {
+                <li class="milestone" animate.enter="milestone-enter" [style.--row]="i">
+                    <span class="year">{{ hackaton.year }}</span>
+
+                    <div class="body">
+                        <h2>{{ hackaton.event }}</h2>
+
+                        <p class="credits">
+                            @if (hackaton.role) {
+                                <span class="role">{{ hackaton.role }}</span>
+                            }
+                            @if (hackaton.result) {
+                                <span class="result">{{ hackaton.result }}</span>
+                            }
+                        </p>
+
+                        @if (hackaton.summary) {
+                            <p class="summary">{{ hackaton.summary }}</p>
+                        }
+
+                        @if (hackaton.stack?.length) {
+                            <ul class="stack">
+                                @for (item of hackaton.stack; track item) {
+                                    <li>{{ item }}</li>
+                                }
+                            </ul>
+                        }
+
+                        @if (hackaton.link) {
+                            @if (isExternal(hackaton)) {
+                                <a [href]="hackaton.link" target="_blank" rel="noopener noreferrer">
+                                    Ver <span aria-hidden="true">&#8599;</span>
+                                </a>
+                            } @else {
+                                <a [routerLink]="hackaton.link">Ver</a>
+                            }
+                        }
+                    </div>
+                </li>
+            }
+        </ol>
+    } @else {
+        <app-empty-state
+            note="As maratonas ainda estão sendo registradas.">
+        </app-empty-state>
+    }
+</app-page-shell>

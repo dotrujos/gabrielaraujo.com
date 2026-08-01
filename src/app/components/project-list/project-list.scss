@@ -32,20 +32,43 @@
 .project-title {
   font-size: 1.1rem;
   font-weight: 500;
-  text-transform: uppercase; 
-  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  letter-spacing: var(--title-tracking);
 }
 
 .action-btn {
   background: none;
   border: none;
-  font-size: 0.9rem;
+  color: var(--white);
+  display: inline-block;
+  font-size: var(--label-size);
   font-weight: 400;
   cursor: pointer;
   padding: 0.5rem 1rem;
   transition: opacity 0.2s;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: var(--label-tracking);
+  text-decoration: underline;
+  text-underline-offset: 4px;
 
   &:hover {
     opacity: 0.7;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .list-item {
+    padding: 1.1rem 0;
+    gap: 12px;
+  }
+
+  .project-title {
+    font-size: 0.95rem;
+  }
+
+  /* alvo de toque maior, alinhado à margem da régua */
+  .action-btn {
+    padding: 0.75rem 0 0.75rem 0.75rem;
   }
 }

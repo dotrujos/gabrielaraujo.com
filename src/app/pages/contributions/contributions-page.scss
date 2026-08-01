@@ -1,0 +1,135 @@
+/* razão de contribuições: colunas fixas, régua grossa no topo.
+   a última coluna tem largura fixa para o cabeçalho e o corpo,
+   que são grids separados, alinharem. */
+.ledger {
+    --ledger-columns: 1.4fr 0.9fr 0.5fr 5rem;
+}
+
+.ledger-head {
+    display: grid;
+    grid-template-columns: var(--ledger-columns);
+    gap: 24px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--white);
+
+    span {
+        font-size: var(--label-size);
+        letter-spacing: var(--label-tracking);
+        text-transform: uppercase;
+        color: var(--light-gray);
+    }
+}
+
+.ledger-body {
+    list-style: none;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: var(--ledger-columns);
+    gap: 8px 24px;
+    align-items: baseline;
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background-color 0.2s;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.04);
+    }
+
+    .project {
+        font-size: 1.15rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: var(--title-tracking);
+    }
+
+    .kind,
+    .year {
+        font-size: var(--label-size);
+        letter-spacing: var(--label-tracking);
+        text-transform: uppercase;
+        color: var(--light-gray);
+    }
+
+    .action a {
+        color: var(--white);
+        font-size: var(--label-size);
+        letter-spacing: var(--label-tracking);
+        text-transform: uppercase;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        white-space: nowrap;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+
+    .summary {
+        grid-column: 1 / -1;
+        max-width: 60ch;
+        color: var(--light-gray);
+    }
+}
+
+.row-enter {
+    animation: row-rise 0.45s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+    animation-delay: calc(0.2s + var(--row) * 0.07s);
+}
+
+@keyframes row-rise {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    /* some com o cabeçalho de colunas; cada linha vira bloco */
+    .ledger-head {
+        display: none;
+    }
+
+    .ledger-body {
+        border-top: 3px solid var(--white);
+    }
+
+    .row {
+        grid-template-columns: 1fr auto;
+
+        .project {
+            grid-column: 1;
+            font-size: 1.05rem;
+        }
+
+        .action {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .kind {
+            grid-column: 1;
+        }
+
+        .year {
+            grid-column: 2;
+            text-align: right;
+        }
+
+        .summary {
+            font-size: 0.95rem;
+            padding-top: 4px;
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .row-enter {
+        animation: none;
+    }
+}

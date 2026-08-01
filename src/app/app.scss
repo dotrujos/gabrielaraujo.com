@@ -2,5 +2,40 @@
     .reduced-opacity {
         opacity: 0.5;
         pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+}
+
+/* o fundo da lâmina entra e sai por fade; o corpo desliza por dentro */
+.popup-enter {
+    animation: popup-fade-in 0.25s ease-out both;
+}
+
+.popup-leave {
+    animation: popup-fade-out 0.2s ease-in both;
+}
+
+@keyframes popup-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popup-fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .popup-enter,
+    .popup-leave {
+        animation-duration: 0.01s;
     }
 }

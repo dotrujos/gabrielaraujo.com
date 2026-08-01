@@ -1,3 +1,11 @@
+/* olho editorial: mesma etiqueta do header, em qualquer tela */
+:host > p:first-child {
+    font-size: var(--label-size);
+    letter-spacing: var(--label-tracking);
+    text-transform: uppercase;
+    color: var(--light-gray);
+}
+
 .intro-container {
     display: flex;
     justify-content: space-between;
@@ -6,6 +14,7 @@
     h1 {
         font-size: 8vw;
         line-height: 0.9;
+        letter-spacing: -0.02em;
     }
     .intro-summary  {
         display: flex;
@@ -32,5 +41,45 @@
     flex-direction: column;
     align-items: baseline;
     gap: 20px;
+
+    h1 {
+      font-size: 13vw;
+    }
+
+    .intro-summary {
+      height: auto;
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .intro-container {
+    gap: 24px;
+
+    h1 {
+      font-size: 14vw;
+    }
+
+    .intro-summary {
+      width: 100%;
+      gap: 20px;
+
+      p {
+        font-size: 0.95rem;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+
+  .intro-icons {
+    flex-wrap: wrap;
+    gap: 16px 18px;
+
+    i {
+      font-size: 30px;
+    }
   }
 }

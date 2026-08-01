@@ -1,0 +1,41 @@
+<app-page-shell
+    index="03"
+    title="Contribuições"
+    deck="Código aberto e o que devolvo para as ferramentas que uso todo dia.">
+    @if (contributions.length) {
+        <div class="ledger">
+            <div class="ledger-head" aria-hidden="true">
+                <span>Projeto</span>
+                <span>Tipo</span>
+                <span>Ano</span>
+                <span></span>
+            </div>
+
+            <ul class="ledger-body">
+                @for (contribution of contributions; track contribution.project; let i = $index) {
+                    <li class="row" animate.enter="row-enter" [style.--row]="i">
+                        <span class="project">{{ contribution.project }}</span>
+                        <span class="kind">{{ contribution.kind }}</span>
+                        <span class="year">{{ contribution.year ?? '—' }}</span>
+                        <span class="action">
+                            @if (contribution.link) {
+                                @if (isExternal(contribution)) {
+                                    <a [href]="contribution.link" target="_blank" rel="noopener noreferrer">
+                                        Ver <span aria-hidden="true">&#8599;</span>
+                                    </a>
+                                } @else {
+                                    <a [routerLink]="contribution.link">Ver</a>
+                                }
+                            }
+                        </span>
+                        <p class="summary">{{ contribution.summary }}</p>
+                    </li>
+                }
+            </ul>
+        </div>
+    } @else {
+        <app-empty-state
+            note="As contribuições em código aberto ainda estão sendo catalogadas.">
+        </app-empty-state>
+    }
+</app-page-shell>

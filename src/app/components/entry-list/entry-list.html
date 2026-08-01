@@ -1,0 +1,35 @@
+<ul class="entries">
+    @for (entry of entries(); track entry.title; let i = $index) {
+        <li class="entry" animate.enter="entry-enter" [style.--row]="i">
+            <span class="entry-index">{{ i < 9 ? '0' + (i + 1) : i + 1 }}</span>
+
+            <div class="entry-body">
+                <h2>{{ entry.title }}</h2>
+                <p>{{ entry.description }}</p>
+
+                @if (entry.tags?.length) {
+                    <ul class="tags">
+                        @for (tag of entry.tags; track tag) {
+                            <li>{{ tag }}</li>
+                        }
+                    </ul>
+                }
+            </div>
+
+            <div class="entry-meta">
+                @if (entry.year) {
+                    <span class="year">{{ entry.year }}</span>
+                }
+                @if (entry.link) {
+                    @if (isExternal(entry)) {
+                        <a [href]="entry.link" target="_blank" rel="noopener noreferrer">
+                            Ver <span aria-hidden="true">&#8599;</span>
+                        </a>
+                    } @else {
+                        <a [routerLink]="entry.link">Ver</a>
+                    }
+                }
+            </div>
+        </li>
+    }
+</ul>

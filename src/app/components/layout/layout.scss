@@ -8,6 +8,9 @@
         p {
             color: var(--gray);
             padding: 20px;
+            font-size: var(--label-size);
+            letter-spacing: var(--label-tracking);
+            text-transform: uppercase;
         }
 
         hr {
@@ -15,6 +18,31 @@
             background-color: var(--gray);
             border: none;
             margin-top: 20px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .container {
+        width: 86%;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .container {
+        width: 100%;
+        padding: 0 18px;
+
+        .footer {
+            text-align: left;
+
+            hr {
+                height: 2px;
+            }
+
+            p {
+                padding: 16px 0;
+            }
         }
     }
 }

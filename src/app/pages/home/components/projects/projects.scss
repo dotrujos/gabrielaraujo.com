@@ -26,3 +26,20 @@
     }
   }
 }
+
+@media only screen and (max-width: 640px) {
+  :host {
+    gap: 32px;
+
+    .projects-summary {
+      p {
+        font-size: 0.95rem;
+      }
+
+      /* no mobile o CTA do hero basta; evita dois "Vamos conversar" */
+      > button {
+        display: none;
+      }
+    }
+  }
+}

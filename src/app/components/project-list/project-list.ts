@@ -1,17 +1,18 @@
-import { Component, input, output } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { ProjectItem } from '../../models/project-item';
+import { isExternalLink } from '../../utils/link';
 
 @Component({
   selector: 'app-project-list',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './project-list.html',
   styleUrl: './project-list.scss',
 })
 export class ProjectList {
   items = input.required<ProjectItem[]>();
-  itemClicked = output<ProjectItem>();
 
-  handleAction(item: ProjectItem): void {
-    this.itemClicked.emit(item);
+  protected isExternal(item: ProjectItem): boolean {
+    return isExternalLink(item.link);
   }
 }

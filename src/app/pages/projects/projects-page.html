@@ -1,0 +1,10 @@
+<app-page-shell
+    index="02"
+    title="Projetos"
+    deck="Seleção de trabalhos de engenharia — da arquitetura à entrega.">
+    @if (entries.length) {
+        <app-entry-list [entries]="entries"></app-entry-list>
+    } @else {
+        <app-empty-state note="Os projetos estão sendo reunidos."></app-empty-state>
+    }
+</app-page-shell>
