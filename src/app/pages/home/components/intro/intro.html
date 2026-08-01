@@ -8,7 +8,10 @@
     </h1>
     <div class="intro-summary">
         <p>Engenharia de software: unindo tecnologia avançada, identidade e resiliência.</p>
-        <button styledButton (click)="openContactPopup()">Vamos conversar</button>
+        <div class="intro-actions">
+            <button styledButton (click)="openContactPopup()">Vamos conversar</button>
+            <a styledButton routerLink="/about">Sobre mim</a>
+        </div>
     </div>
 </div>
 <br/><br/>

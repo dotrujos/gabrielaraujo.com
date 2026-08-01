@@ -1,0 +1,74 @@
+<app-page-shell index="02" title="Sobre mim"
+    deck="Desenvolvedor full stack. Construo aplicações de alta performance — e me interessa menos a novidade da semana do que aquilo que continua de pé depois dela.">
+
+    <section class="block" animate.enter="block-enter" [style.--row]="0">
+        <h2 class="block-title">O trabalho</h2>
+        <div class="prose">
+            <p>
+                Prazer, me chamo Gabriel Araújo. Sou Engenheiro de Software I, com forte atuação em Java e C#, e
+                atualmente curso Ciência da Computação no Mackenzie. Comecei a programar na prática em 2021, criando
+                algumas aplicações web e mobile. De lá para cá, meu foco foi construir uma base técnica: passei pelo
+                curso técnico da Etec e tive a oportunidade de participar dos treinamentos de certificação PCA (2025) e
+                ACE (2026) do Google Cloud.
+            </p>
+            <p>
+                É o que resumo em três palavras: tecnologia avançada, identidade e resiliência.No dia a dia, sou focado,
+                autodidata e muito participativo. Apesar da pouca idade, sempre encarei os desafios de frente. Mesmo
+                iniciando como Aprendiz e Estagiário, rapidamente assumi responsabilidades de desenvolvedor pleno,
+                contribuindo ativamente com ideias em reuniões de planejamento e arquitetura. Além disso, tenho
+                facilidade com idiomas. Falo inglês fluentemente desde pequeno e agora estou aprendendo francês.
+            </p>
+        </div>
+    </section>
+
+    <section class="block" animate.enter="block-enter" [style.--row]="1">
+        <h2 class="block-title">Tecnologias</h2>
+        <ul class="skills">
+            @for (group of skills; track group.label) {
+            <li class="skill-group">
+                <span class="skill-label">{{ group.label }}</span>
+                <ul class="skill-items">
+                    @for (item of group.items; track item) {
+                    <li>{{ item }}</li>
+                    }
+                </ul>
+            </li>
+            }
+        </ul>
+    </section>
+
+    <section class="block" animate.enter="block-enter" [style.--row]="2">
+        <h2 class="block-title">Experiência</h2>
+        @if (experiences.length) {
+        <ol class="experiences">
+            @for (experience of experiences; track experience.company) {
+            <li class="experience">
+                <span class="period">{{ experience.period }}</span>
+                <div class="experience-body">
+                    <h3>{{ experience.role }}</h3>
+                    <p class="company">{{ experience.company }}</p>
+                    @if (experience.summary) {
+                    <p class="summary">{{ experience.summary }}</p>
+                    }
+                    @if (experience.stack?.length) {
+                    <ul class="stack">
+                        @for (item of experience.stack; track item) {
+                        <li>{{ item }}</li>
+                        }
+                    </ul>
+                    }
+                </div>
+            </li>
+            }
+        </ol>
+        } @else {
+        <app-empty-state title="Em breve" note="O histórico profissional está sendo organizado.">
+        </app-empty-state>
+        }
+    </section>
+
+    <section class="closing" animate.enter="block-enter" [style.--row]="3">
+        <p>Quer conversar sobre um projeto?</p>
+        <button styledButton (click)="openContactPopup()">Vamos conversar</button>
+    </section>
+</app-page-shell>

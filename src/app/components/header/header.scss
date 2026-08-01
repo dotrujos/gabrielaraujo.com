@@ -75,22 +75,24 @@
     letter-spacing: var(--label-tracking);
 }
 
-@media only screen and (max-width: 640px) {
+/* o header troca para o menu compacto antes do resto do site (900px):
+   com 5 seções a nav horizontal não cabe mais na barra do tablet. */
+@media only screen and (max-width: 900px) {
     .nav-desktop {
         display: none;
     }
 
+    /* alvo de toque de 44px, encostado na margem direita */
     .menu-toggle {
-        display: block;
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 0 0 0 20px;
     }
 
     .bar {
         align-items: center;
         padding: 16px 0 12px;
-    }
-
-    .brand {
-        font-size: 0.9rem;
     }
 
     /* pilha de réguas duras, uma linha por seção */
@@ -135,8 +137,15 @@
         a:nth-child(2) { animation-delay: 0.11s; }
         a:nth-child(3) { animation-delay: 0.16s; }
         a:nth-child(4) { animation-delay: 0.21s; }
+        a:nth-child(5) { animation-delay: 0.26s; }
     }
 
+}
+
+@media only screen and (max-width: 640px) {
+    .brand {
+        font-size: 0.9rem;
+    }
 }
 
 @keyframes menu-open {

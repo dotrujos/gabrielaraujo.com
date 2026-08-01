@@ -8,14 +8,17 @@
             <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
                 <span class="index">01</span>INÍCIO
             </a>
+            <a routerLink="/about" routerLinkActive="active">
+                <span class="index">02</span>SOBRE
+            </a>
             <a routerLink="/projects" routerLinkActive="active">
-                <span class="index">02</span>PROJETOS
+                <span class="index">03</span>PROJETOS
             </a>
             <a routerLink="/contributions" routerLinkActive="active">
-                <span class="index">03</span>CONTRIBUIÇÕES
+                <span class="index">04</span>CONTRIBUIÇÕES
             </a>
             <a routerLink="/hackaton" routerLinkActive="active">
-                <span class="index">04</span>HACKATONS
+                <span class="index">05</span>HACKATONS
             </a>
         </nav>
 
@@ -37,14 +40,17 @@
             <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">
                 <span class="index">01</span>INÍCIO
             </a>
+            <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">
+                <span class="index">02</span>SOBRE
+            </a>
             <a routerLink="/projects" routerLinkActive="active" (click)="closeMenu()">
-                <span class="index">02</span>PROJETOS
+                <span class="index">03</span>PROJETOS
             </a>
             <a routerLink="/contributions" routerLinkActive="active" (click)="closeMenu()">
-                <span class="index">03</span>CONTRIBUIÇÕES
+                <span class="index">04</span>CONTRIBUIÇÕES
             </a>
             <a routerLink="/hackaton" routerLinkActive="active" (click)="closeMenu()">
-                <span class="index">04</span>HACKATONS
+                <span class="index">05</span>HACKATONS
             </a>
         </nav>
     }

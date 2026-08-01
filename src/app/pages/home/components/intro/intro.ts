@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { SerifFont } from '../../../../directives/serif-font';
 import { StyledButton } from "../../../../directives/styled-button";
 import { PopupStore } from '../../../../store/popup-store';
 
 @Component({
   selector: 'app-intro',
-  imports: [SerifFont, StyledButton],
+  imports: [SerifFont, StyledButton, RouterLink],
   templateUrl: './intro.html',
   styleUrl: './intro.scss',
 })

@@ -1,0 +1,224 @@
+/* cada bloco abre com a etiqueta à esquerda e o conteúdo à direita,
+   separados por régua — leitura de colunas de jornal */
+.block {
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+    gap: 32px;
+    padding: 36px 0;
+    border-top: 3px solid var(--white);
+}
+
+.block + .block {
+    border-top-width: 1px;
+    border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+.block-title {
+    font-size: var(--label-size);
+    letter-spacing: var(--label-tracking);
+    text-transform: uppercase;
+    color: var(--light-gray);
+    font-weight: 400;
+}
+
+.prose {
+    max-width: 60ch;
+
+    p + p {
+        padding-top: 16px;
+    }
+
+    /* primeiro parágrafo em corpo maior, como abertura de matéria */
+    p:first-child {
+        font-size: 1.15rem;
+    }
+}
+
+.skills {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .skill-group {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 12px;
+    }
+
+    .skill-label {
+        min-width: 7rem;
+        font-size: var(--label-size);
+        letter-spacing: var(--label-tracking);
+        text-transform: uppercase;
+        color: var(--light-gray);
+    }
+
+    .skill-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        list-style: none;
+
+        li {
+            border: 1px solid var(--gray);
+            padding: 6px 12px;
+            font-size: 0.7rem;
+            letter-spacing: var(--label-tracking);
+            text-transform: uppercase;
+        }
+    }
+}
+
+.experiences {
+    list-style: none;
+}
+
+.experience {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    gap: 24px;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+    &:first-child {
+        padding-top: 0;
+    }
+
+    .period {
+        font-size: var(--label-size);
+        letter-spacing: var(--label-tracking);
+        color: var(--light-gray);
+    }
+
+    h3 {
+        font-size: 1.3rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: var(--title-tracking);
+    }
+
+    .company {
+        padding-top: 6px;
+        font-size: var(--label-size);
+        letter-spacing: var(--label-tracking);
+        text-transform: uppercase;
+        color: var(--light-gray);
+    }
+
+    .summary {
+        padding-top: 12px;
+        max-width: 60ch;
+        color: var(--light-gray);
+    }
+
+    .stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        list-style: none;
+        padding-top: 14px;
+
+        li {
+            border: 1px solid var(--gray);
+            padding: 4px 10px;
+            font-size: 0.65rem;
+            letter-spacing: var(--label-tracking);
+            text-transform: uppercase;
+        }
+    }
+}
+
+.closing {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 36px 0 0;
+    border-top: 3px solid var(--white);
+
+    p {
+        font-size: 1.3rem;
+        letter-spacing: -0.01em;
+    }
+
+    button {
+        transition: background-color 0.2s, color 0.2s;
+
+        &:hover {
+            background-color: var(--white) !important;
+            color: var(--black);
+        }
+    }
+}
+
+.block-enter {
+    animation: block-rise 0.5s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+    animation-delay: calc(0.18s + var(--row) * 0.08s);
+}
+
+@keyframes block-rise {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    /* etiqueta sobe para cima do conteúdo */
+    .block {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 28px 0;
+    }
+
+    .prose p:first-child {
+        font-size: 1.05rem;
+    }
+
+    .prose p,
+    .experience .summary {
+        font-size: 0.95rem;
+    }
+
+    .skills .skill-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .experience {
+        grid-template-columns: 1fr;
+        gap: 10px;
+
+        h3 {
+            font-size: 1.1rem;
+        }
+    }
+
+    .closing {
+        flex-direction: column;
+        align-items: stretch;
+        padding-top: 28px;
+
+        p {
+            font-size: 1.1rem;
+        }
+
+        button {
+            width: 100%;
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .block-enter {
+        animation-duration: 0.01s;
+        animation-delay: 0s;
+    }
+}

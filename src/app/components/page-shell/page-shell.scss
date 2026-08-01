@@ -21,7 +21,7 @@
         text-transform: uppercase;
         /* títulos são palavras únicas e longas ("CONTRIBUIÇÕES"):
            quebra em vez de furar a largura da tela */
-        overflow-wrap: anywhere;
+        overflow-wrap: break-word;
     }
 
     .deck {

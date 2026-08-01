@@ -15,7 +15,9 @@
         font-size: 8vw;
         line-height: 0.9;
         letter-spacing: -0.02em;
-        overflow-wrap: anywhere;
+        /* break-word e não anywhere: anywhere entra no cálculo de
+           min-content e encolhe o h1 dentro do flex, partindo "DEVELOPER" */
+        overflow-wrap: break-word;
     }
     .intro-summary  {
         display: flex;
@@ -25,6 +27,25 @@
         height: -webkit-fill-available;
         button {
             width: fit-content;
+        }
+    }
+
+    .intro-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+
+        /* a caixa e a tipografia da pílula vêm da diretiva styledButton */
+        button,
+        a {
+            width: fit-content;
+            transition: background-color 0.2s, color 0.2s;
+
+            &:hover {
+                background-color: var(--white) !important;
+                color: var(--black);
+            }
         }
     }
 }
@@ -68,9 +89,18 @@
       p {
         font-size: 0.95rem;
       }
+    }
 
-      button {
+    /* empilha os dois CTAs em largura cheia, alvos de toque limpos */
+    .intro-actions {
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+
+      button,
+      a {
         width: 100%;
+        text-align: center;
       }
     }
   }

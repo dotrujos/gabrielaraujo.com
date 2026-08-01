@@ -31,6 +31,13 @@ button {
     -webkit-tap-highlight-color: transparent;
 }
 
+/* mata o duplo-toque-zoom do iOS nos controles, sem desabilitar o
+   pinch-zoom da página (que precisa continuar disponível) */
+button,
+a {
+    touch-action: manipulation;
+}
+
 :root {
     --black: #0A0A0C;
     --white: #FAF5F1;
