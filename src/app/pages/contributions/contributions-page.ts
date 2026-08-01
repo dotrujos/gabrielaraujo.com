@@ -16,7 +16,7 @@ export class ContributionsPage {
   protected readonly contributions: ContributionEntry[] = [
     {
       project: 'CleanArch Enablers',
-      kind: 'SDK',
+      kind: 'SDK, Java',
       summary: 'SDK para reduzir atrito de desenvolvimento de aplicações com Clean Architecture.',
       year: '2025, 2026',
       link: 'https://github.com/clean-arch-enablers-project'

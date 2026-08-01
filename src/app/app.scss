@@ -6,13 +6,12 @@
     }
 }
 
-/* o fundo da lâmina entra e sai por fade; o corpo desliza por dentro */
+/* o fundo da lâmina entra por fade; o corpo desliza por dentro.
+   a saída é imediata de propósito: com animate.leave o elemento só é
+   removido no animationend, e se a animação não roda (movimento
+   reduzido, aba em segundo plano) o popup ficaria preso na tela. */
 .popup-enter {
     animation: popup-fade-in 0.25s ease-out both;
-}
-
-.popup-leave {
-    animation: popup-fade-out 0.2s ease-in both;
 }
 
 @keyframes popup-fade-in {
@@ -24,18 +23,8 @@
     }
 }
 
-@keyframes popup-fade-out {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
-
 @media (prefers-reduced-motion: reduce) {
-    .popup-enter,
-    .popup-leave {
+    .popup-enter {
         animation-duration: 0.01s;
     }
 }

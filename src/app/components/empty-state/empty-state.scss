@@ -7,6 +7,7 @@
         line-height: 0.9;
         letter-spacing: -0.02em;
         text-transform: uppercase;
+        overflow-wrap: anywhere;
     }
 
     .empty-note {
@@ -33,6 +34,7 @@
 
 @media (prefers-reduced-motion: reduce) {
     .empty-enter {
-        animation: none;
+        animation-duration: 0.01s;
+        animation-delay: 0s;
     }
 }

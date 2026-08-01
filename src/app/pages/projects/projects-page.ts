@@ -18,6 +18,12 @@ export class ProjectsPage {
       year: '2026',
       tags: ['Go', 'Google Cloud']
     },
+     {
+      title: 'Call for Azure',
+      description: 'Série Hands-on no Youtube para quem não conhece de Microsoft Azure.',
+      year: '2026',
+      tags: ['Azure', '.NET', 'C#', 'Microsoft', 'Youtube']
+    },
     {
       title: 'Velo',
       description: 'Rede social, Mapas e Eventos para ciclistas.',

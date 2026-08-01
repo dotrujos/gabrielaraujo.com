@@ -131,6 +131,7 @@
 
 @media (prefers-reduced-motion: reduce) {
     .entry-enter {
-        animation: none;
+        animation-duration: 0.01s;
+        animation-delay: 0s;
     }
 }

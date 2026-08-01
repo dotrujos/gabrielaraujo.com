@@ -168,7 +168,8 @@
 @media (prefers-reduced-motion: reduce) {
   .sheet-enter,
   .sheet-enter .channels li {
-    animation: none;
+    animation-duration: 0.01s;
+    animation-delay: 0s;
   }
 }
 

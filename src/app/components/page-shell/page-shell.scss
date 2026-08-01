@@ -19,6 +19,9 @@
         line-height: 0.9;
         letter-spacing: -0.02em;
         text-transform: uppercase;
+        /* títulos são palavras únicas e longas ("CONTRIBUIÇÕES"):
+           quebra em vez de furar a largura da tela */
+        overflow-wrap: anywhere;
     }
 
     .deck {
@@ -54,7 +57,7 @@
 
 @media only screen and (max-width: 1024px) {
     .page-head h1 {
-        font-size: 13vw;
+        font-size: 11vw;
     }
 }
 
@@ -67,7 +70,7 @@
         padding-bottom: 28px;
 
         h1 {
-            font-size: 14vw;
+            font-size: 11vw;
         }
 
         .deck {
@@ -81,6 +84,7 @@
     .head-enter,
     .head-enter h1,
     .head-enter .deck {
-        animation: none;
+        animation-duration: 0.01s;
+        animation-delay: 0s;
     }
 }

@@ -137,9 +137,6 @@
         a:nth-child(4) { animation-delay: 0.21s; }
     }
 
-    .menu-leave {
-        animation: menu-close 0.2s ease-in both;
-    }
 }
 
 @keyframes menu-open {
@@ -150,17 +147,6 @@
     to {
         clip-path: inset(0 0 0 0);
         opacity: 1;
-    }
-}
-
-@keyframes menu-close {
-    from {
-        clip-path: inset(0 0 0 0);
-        opacity: 1;
-    }
-    to {
-        clip-path: inset(0 0 100% 0);
-        opacity: 0;
     }
 }
 
@@ -175,10 +161,14 @@
     }
 }
 
+/* o menu fecha na hora, sem animate.leave: o Angular só removeria o
+   elemento no animationend, e sem animação (movimento reduzido, aba em
+   segundo plano) o menu ficaria preso aberto.
+   pelo mesmo motivo, nunca zere a animação de entrada com `animation: none`. */
 @media (prefers-reduced-motion: reduce) {
     .menu-enter,
-    .menu-enter a,
-    .menu-leave {
-        animation: none;
+    .menu-enter a {
+        animation-duration: 0.01s;
+        animation-delay: 0s;
     }
 }

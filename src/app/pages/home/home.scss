@@ -35,6 +35,7 @@ app-projects.section-enter {
 
 @media (prefers-reduced-motion: reduce) {
     .section-enter {
-        animation: none;
+        animation-duration: 0.01s;
+        animation-delay: 0s;
     }
 }

@@ -130,6 +130,7 @@
 
 @media (prefers-reduced-motion: reduce) {
     .row-enter {
-        animation: none;
+        animation-duration: 0.01s;
+        animation-delay: 0s;
     }
 }
