@@ -24,6 +24,12 @@ p {
     line-height: 1.6;
 }
 
+/* seleção em negativo: fundo branco, texto preto */
+::selection {
+    background-color: var(--white);
+    color: var(--black);
+}
+
 button {
     font-family: 'BricolageGrotesque', sans-serif;
     color: var(--white);
