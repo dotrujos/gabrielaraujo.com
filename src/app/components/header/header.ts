@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { SerifFont } from '../../directives/serif-font';
+import { ThemeToggle } from '../theme-toggle/theme-toggle';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, RouterLinkActive, SerifFont],
+  imports: [RouterLink, RouterLinkActive, SerifFont, ThemeToggle],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })

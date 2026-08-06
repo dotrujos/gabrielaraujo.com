@@ -10,13 +10,13 @@
     grid-template-columns: var(--ledger-columns);
     gap: 24px;
     padding-bottom: 12px;
-    border-bottom: 3px solid var(--white);
+    border-bottom: 3px solid var(--fg);
 
     span {
         font-size: var(--label-size);
         letter-spacing: var(--label-tracking);
         text-transform: uppercase;
-        color: var(--light-gray);
+        color: var(--subtle);
     }
 }
 
@@ -30,11 +30,11 @@
     gap: 8px 24px;
     align-items: baseline;
     padding: 22px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid var(--rule);
     transition: background-color 0.2s;
 
     &:hover {
-        background-color: rgba(255, 255, 255, 0.04);
+        background-color: var(--hover-tint);
     }
 
     .project {
@@ -49,11 +49,11 @@
         font-size: var(--label-size);
         letter-spacing: var(--label-tracking);
         text-transform: uppercase;
-        color: var(--light-gray);
+        color: var(--subtle);
     }
 
     .action a {
-        color: var(--white);
+        color: var(--fg);
         font-size: var(--label-size);
         letter-spacing: var(--label-tracking);
         text-transform: uppercase;
@@ -69,7 +69,7 @@
     .summary {
         grid-column: 1 / -1;
         max-width: 60ch;
-        color: var(--light-gray);
+        color: var(--subtle);
     }
 }
 
@@ -96,7 +96,7 @@
     }
 
     .ledger-body {
-        border-top: 3px solid var(--white);
+        border-top: 3px solid var(--fg);
     }
 
     .row {

@@ -7,7 +7,7 @@
 .backdrop {
   width: 100%;
   height: 100%;
-  background-color: rgba(10, 10, 12, 0.92);
+  background-color: var(--scrim);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,8 +16,8 @@
 
 /* lâmina impressa: sem raio, sem sombra, só régua grossa */
 .sheet {
-  background-color: var(--black);
-  border: 3px solid var(--white);
+  background-color: var(--bg);
+  border: 3px solid var(--fg);
   width: 100%;
   max-width: 720px;
   max-height: 90vh;
@@ -35,7 +35,7 @@
   .eyebrow {
     font-size: var(--label-size);
     letter-spacing: var(--label-tracking);
-    color: var(--light-gray);
+    color: var(--subtle);
   }
 
   .close {
@@ -68,10 +68,10 @@
 
 .channels {
   list-style: none;
-  border-top: 3px solid var(--white);
+  border-top: 3px solid var(--fg);
 
   li + li a {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid var(--rule);
   }
 
   a {
@@ -81,19 +81,19 @@
     gap: 16px;
     padding: 18px 12px;
     margin: 0 -12px;
-    color: var(--white);
+    color: var(--fg);
     text-decoration: none;
     transition: background-color 0.15s, color 0.15s;
 
     /* inversão dura no hover, sem transição de cor suave */
     &:hover,
     &:focus-visible {
-      background-color: var(--white);
-      color: var(--black);
+      background-color: var(--fg);
+      color: var(--bg);
       outline: none;
 
       .index {
-        color: var(--black);
+        color: var(--bg);
       }
     }
   }
@@ -101,7 +101,7 @@
   .index {
     font-size: 0.65rem;
     letter-spacing: var(--label-tracking);
-    color: var(--light-gray);
+    color: var(--subtle);
     vertical-align: super;
   }
 
@@ -126,7 +126,7 @@
   padding-top: 20px;
   font-size: var(--label-size);
   letter-spacing: var(--label-tracking);
-  color: var(--gray);
+  color: var(--muted);
 }
 
 /* a lâmina sobe; os canais entram em cascata logo atrás */

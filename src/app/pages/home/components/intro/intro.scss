@@ -3,7 +3,7 @@
     font-size: var(--label-size);
     letter-spacing: var(--label-tracking);
     text-transform: uppercase;
-    color: var(--light-gray);
+    color: var(--subtle);
 }
 
 .intro-container {
@@ -43,8 +43,8 @@
             transition: background-color 0.2s, color 0.2s;
 
             &:hover {
-                background-color: var(--white) !important;
-                color: var(--black);
+                background-color: var(--fg) !important;
+                color: var(--bg);
             }
         }
     }

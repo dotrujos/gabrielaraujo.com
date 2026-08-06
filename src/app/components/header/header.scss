@@ -3,23 +3,25 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: var(--black);
+    background-color: var(--bg);
 }
 
 .site-header {
-    border-bottom: 3px solid var(--gray);
+    border-bottom: 3px solid var(--muted);
 }
 
+/* centro óptico, não baseline: o botão de tema é um ícone e não tem
+   baseline de texto, então o baseline jogava a barra toda fora de eixo */
 .bar {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
     gap: 20px;
     padding: 18px 0 14px;
 }
 
 .brand {
-    color: var(--white);
+    color: var(--fg);
     text-decoration: none;
     text-transform: uppercase;
     font-size: 1rem;
@@ -32,13 +34,21 @@
     }
 }
 
+/* nav e controles andam juntos à direita, para o space-between da barra
+   continuar separando só a marca do resto */
+.bar-end {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
 .nav-desktop {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 28px;
 
     a {
-        color: var(--white);
+        color: var(--fg);
         text-decoration: none;
         text-transform: uppercase;
         font-size: var(--label-size);
@@ -52,14 +62,14 @@
         }
 
         &.active {
-            border-bottom-color: var(--white);
+            border-bottom-color: var(--fg);
         }
     }
 }
 
 /* numeração editorial das seções */
 .index {
-    color: var(--light-gray);
+    color: var(--subtle);
     font-size: 0.65em;
     margin-right: 8px;
     vertical-align: super;
@@ -75,11 +85,21 @@
     letter-spacing: var(--label-tracking);
 }
 
+/* o botão de tema vive na barra no desktop e dentro do dropdown no
+   mobile; só um dos dois aparece por vez */
+.menu-theme {
+    display: none;
+}
+
 /* o header troca para o menu compacto antes do resto do site (900px):
    com 5 seções a nav horizontal não cabe mais na barra do tablet. */
 @media only screen and (max-width: 900px) {
     .nav-desktop {
         display: none;
+    }
+
+    .bar-end {
+        gap: 4px;
     }
 
     /* alvo de toque de 44px, encostado na margem direita */
@@ -90,8 +110,18 @@
         padding: 0 0 0 20px;
     }
 
+    /* no mobile o botão de tema sai da barra e entra no dropdown */
+    .bar-theme {
+        display: none;
+    }
+
+    .menu-theme {
+        display: flex;
+        padding: 14px 0;
+        border-top: 1px solid var(--rule);
+    }
+
     .bar {
-        align-items: center;
         padding: 16px 0 12px;
     }
 
@@ -99,10 +129,10 @@
     .nav-mobile {
         display: flex;
         flex-direction: column;
-        border-top: 2px solid var(--gray);
+        border-top: 2px solid var(--muted);
 
         a {
-            color: var(--white);
+            color: var(--fg);
             text-decoration: none;
             text-transform: uppercase;
             font-size: 1.1rem;
@@ -110,11 +140,11 @@
             padding: 18px 0;
 
             & + a {
-                border-top: 1px solid rgba(255, 255, 255, 0.2);
+                border-top: 1px solid var(--rule);
             }
 
             &.active .index {
-                color: var(--white);
+                color: var(--fg);
             }
         }
 
@@ -129,7 +159,8 @@
     .menu-enter {
         animation: menu-open 0.28s cubic-bezier(0.2, 0.7, 0.3, 1) both;
 
-        a {
+        a,
+        .menu-theme {
             animation: link-rise 0.3s cubic-bezier(0.2, 0.7, 0.3, 1) both;
         }
 
@@ -138,6 +169,7 @@
         a:nth-child(3) { animation-delay: 0.16s; }
         a:nth-child(4) { animation-delay: 0.21s; }
         a:nth-child(5) { animation-delay: 0.26s; }
+        .menu-theme { animation-delay: 0.31s; }
     }
 
 }
@@ -176,7 +208,8 @@
    pelo mesmo motivo, nunca zere a animação de entrada com `animation: none`. */
 @media (prefers-reduced-motion: reduce) {
     .menu-enter,
-    .menu-enter a {
+    .menu-enter a,
+    .menu-enter .menu-theme {
         animation-duration: 0.01s;
         animation-delay: 0s;
     }

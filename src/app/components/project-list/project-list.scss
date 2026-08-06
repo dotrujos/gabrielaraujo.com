@@ -17,7 +17,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+  border-bottom: 1px solid var(--rule); 
   transition: background-color 0.3s ease;
 
   &:first-child {
@@ -25,7 +25,7 @@
   }
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.05); 
+    background-color: var(--hover-tint); 
   }
 }
 
@@ -39,7 +39,7 @@
 .action-btn {
   background: none;
   border: none;
-  color: var(--white);
+  color: var(--fg);
   display: inline-block;
   font-size: var(--label-size);
   font-weight: 400;

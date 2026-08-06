@@ -6,7 +6,7 @@
         text-align: center;
 
         p {
-            color: var(--gray);
+            color: var(--muted);
             padding: 20px;
             font-size: var(--label-size);
             letter-spacing: var(--label-tracking);
@@ -15,7 +15,7 @@
 
         hr {
             height: 3px;
-            background-color: var(--gray);
+            background-color: var(--muted);
             border: none;
             margin-top: 20px;
         }

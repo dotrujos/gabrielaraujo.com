@@ -1,6 +1,6 @@
 .entries {
     list-style: none;
-    border-top: 3px solid var(--white);
+    border-top: 3px solid var(--fg);
 }
 
 .entry {
@@ -8,17 +8,17 @@
     grid-template-columns: auto 1fr auto;
     gap: 24px;
     padding: 28px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid var(--rule);
     transition: background-color 0.2s;
 
     &:hover {
-        background-color: rgba(255, 255, 255, 0.04);
+        background-color: var(--hover-tint);
     }
 
     .entry-index {
         font-size: 0.65rem;
         letter-spacing: var(--label-tracking);
-        color: var(--light-gray);
+        color: var(--subtle);
         vertical-align: super;
     }
 
@@ -34,7 +34,7 @@
         p {
             padding-top: 12px;
             max-width: 60ch;
-            color: var(--light-gray);
+            color: var(--subtle);
         }
     }
 
@@ -47,7 +47,7 @@
         padding-top: 16px;
 
         li {
-            border: 1px solid var(--gray);
+            border: 1px solid var(--muted);
             padding: 4px 10px;
             font-size: 0.65rem;
             letter-spacing: var(--label-tracking);
@@ -65,11 +65,11 @@
         .year {
             font-size: var(--label-size);
             letter-spacing: var(--label-tracking);
-            color: var(--light-gray);
+            color: var(--subtle);
         }
 
         a {
-            color: var(--white);
+            color: var(--fg);
             padding: 0;
             font-size: var(--label-size);
             letter-spacing: var(--label-tracking);

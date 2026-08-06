@@ -11,8 +11,8 @@ html {
 
 body {
     font-family: 'BricolageGrotesque', sans-serif;
-    color: var(--white);
-    background-color: var(--black);
+    color: var(--fg);
+    background-color: var(--bg);
     overflow-x: hidden;
 }
 
@@ -24,15 +24,15 @@ p {
     line-height: 1.6;
 }
 
-/* seleção em negativo: fundo branco, texto preto */
+/* seleção em negativo: sempre o oposto do fundo do tema atual */
 ::selection {
-    background-color: var(--white);
-    color: var(--black);
+    background-color: var(--fg);
+    color: var(--bg);
 }
 
 button {
     font-family: 'BricolageGrotesque', sans-serif;
-    color: var(--white);
+    color: var(--fg);
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
 }
@@ -45,16 +45,67 @@ a {
 }
 
 :root {
-    --black: #0A0A0C;
-    --white: #FAF5F1;
-    --gray: #414143;
-    --light-gray: #A8A8A8;
+    /* paleta bruta — nenhum branco puro, nenhum preto puro */
+    --ink-900: #0A0A0C;
+    --ink-700: #414143;
+    --paper-50: #FAF5F1;
+    --paper-100: #EDE8D0;
+    --stone-400: #A8A8A8;
+    --stone-600: #5C5A57;
+    /* serve a filetes E a texto apagado (rodapé, colofão): precisa ficar
+       tão discreto quanto o --ink-700 do escuro, sem sumir no papel */
+    --stone-500: #A9A29A;
 
     /* tipografia editorial: mesma escala em mobile e desktop */
     --label-size: 0.75rem;
     --label-tracking: 0.12em;
     --title-tracking: 0.05em;
     --brand-tracking: 0.08em;
+}
+
+/* Tokens semânticos.
+   Os componentes só falam em --bg / --fg / --subtle / --muted / --rule /
+   --hover-tint / --scrim; trocar de tema é trocar estas sete linhas. */
+@mixin theme-dark {
+    color-scheme: dark;
+    --bg: var(--ink-900);
+    --fg: var(--paper-50);
+    --subtle: var(--stone-400);
+    --muted: var(--ink-700);
+    --rule: rgba(250, 245, 241, 0.2);
+    --hover-tint: rgba(250, 245, 241, 0.05);
+    --scrim: rgba(10, 10, 12, 0.92);
+}
+
+@mixin theme-light {
+    color-scheme: light;
+    --bg: var(--paper-100);
+    --fg: var(--ink-900);
+    --subtle: var(--stone-600);
+    --muted: var(--stone-500);
+    --rule: rgba(10, 10, 12, 0.18);
+    --hover-tint: rgba(10, 10, 12, 0.05);
+    --scrim: rgba(10, 10, 12, 0.6);
+}
+
+/* padrão sem JS: segue o navegador */
+:root {
+    @include theme-dark;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        @include theme-light;
+    }
+}
+
+/* escolha explícita do usuário vence o navegador, nos dois sentidos */
+:root[data-theme='dark'] {
+    @include theme-dark;
+}
+
+:root[data-theme='light'] {
+    @include theme-light;
 }
 
 @font-face {

@@ -1,7 +1,7 @@
 /* linha do tempo: ano em display à esquerda, filete vertical */
 .timeline {
     list-style: none;
-    border-top: 3px solid var(--white);
+    border-top: 3px solid var(--fg);
 }
 
 .milestone {
@@ -9,17 +9,17 @@
     grid-template-columns: 6.5rem 1fr;
     gap: 32px;
     padding: 32px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid var(--rule);
 
     .year {
         font-size: 1.75rem;
         line-height: 1;
         letter-spacing: -0.02em;
-        color: var(--light-gray);
+        color: var(--subtle);
     }
 
     .body {
-        border-left: 2px solid var(--gray);
+        border-left: 2px solid var(--muted);
         padding-left: 24px;
 
         h2 {
@@ -44,13 +44,13 @@
         }
 
         .role {
-            color: var(--light-gray);
+            color: var(--subtle);
         }
 
         /* resultado em negativo, como selo de capa */
         .result {
-            background-color: var(--white);
-            color: var(--black);
+            background-color: var(--fg);
+            color: var(--bg);
             padding: 3px 8px;
             font-weight: 600;
         }
@@ -59,7 +59,7 @@
     .summary {
         padding-top: 14px;
         max-width: 60ch;
-        color: var(--light-gray);
+        color: var(--subtle);
     }
 
     .stack {
@@ -70,7 +70,7 @@
         padding-top: 16px;
 
         li {
-            border: 1px solid var(--gray);
+            border: 1px solid var(--muted);
             padding: 4px 10px;
             font-size: 0.65rem;
             letter-spacing: var(--label-tracking);
@@ -80,7 +80,7 @@
 
     .body > a {
         display: inline-block;
-        color: var(--white);
+        color: var(--fg);
         margin-top: 18px;
         font-size: var(--label-size);
         letter-spacing: var(--label-tracking);

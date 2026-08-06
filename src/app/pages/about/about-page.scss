@@ -5,19 +5,19 @@
     grid-template-columns: 10rem 1fr;
     gap: 32px;
     padding: 36px 0;
-    border-top: 3px solid var(--white);
+    border-top: 3px solid var(--fg);
 }
 
 .block + .block {
     border-top-width: 1px;
-    border-top-color: rgba(255, 255, 255, 0.2);
+    border-top-color: var(--rule);
 }
 
 .block-title {
     font-size: var(--label-size);
     letter-spacing: var(--label-tracking);
     text-transform: uppercase;
-    color: var(--light-gray);
+    color: var(--subtle);
     font-weight: 400;
 }
 
@@ -52,7 +52,7 @@
         font-size: var(--label-size);
         letter-spacing: var(--label-tracking);
         text-transform: uppercase;
-        color: var(--light-gray);
+        color: var(--subtle);
     }
 
     .skill-items {
@@ -62,7 +62,7 @@
         list-style: none;
 
         li {
-            border: 1px solid var(--gray);
+            border: 1px solid var(--muted);
             padding: 6px 12px;
             font-size: 0.7rem;
             letter-spacing: var(--label-tracking);
@@ -80,7 +80,7 @@
     grid-template-columns: 8rem 1fr;
     gap: 24px;
     padding: 24px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid var(--rule);
 
     &:first-child {
         padding-top: 0;
@@ -89,7 +89,7 @@
     .period {
         font-size: var(--label-size);
         letter-spacing: var(--label-tracking);
-        color: var(--light-gray);
+        color: var(--subtle);
     }
 
     h3 {
@@ -104,13 +104,13 @@
         font-size: var(--label-size);
         letter-spacing: var(--label-tracking);
         text-transform: uppercase;
-        color: var(--light-gray);
+        color: var(--subtle);
     }
 
     .summary {
         padding-top: 12px;
         max-width: 60ch;
-        color: var(--light-gray);
+        color: var(--subtle);
     }
 
     .stack {
@@ -121,7 +121,7 @@
         padding-top: 14px;
 
         li {
-            border: 1px solid var(--gray);
+            border: 1px solid var(--muted);
             padding: 4px 10px;
             font-size: 0.65rem;
             letter-spacing: var(--label-tracking);
@@ -137,7 +137,7 @@
     justify-content: space-between;
     gap: 20px;
     padding: 36px 0 0;
-    border-top: 3px solid var(--white);
+    border-top: 3px solid var(--fg);
 
     p {
         font-size: 1.3rem;
@@ -148,8 +148,8 @@
         transition: background-color 0.2s, color 0.2s;
 
         &:hover {
-            background-color: var(--white) !important;
-            color: var(--black);
+            background-color: var(--fg) !important;
+            color: var(--bg);
         }
     }
 }
